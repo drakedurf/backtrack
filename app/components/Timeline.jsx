@@ -231,6 +231,7 @@ export default function Timeline() {
         <div style={{ position: "absolute", top: 0, left: 0, right: 0, zIndex: 40, padding: "16px 32px", display: "flex", alignItems: "center", justifyContent: "space-between", background: "linear-gradient(180deg, rgba(10,10,12,1) 0%, rgba(10,10,12,0.95) 70%, transparent 100%)" }}>
           <div style={{ color: "rgba(255,255,255,0.5)", fontSize: 13, letterSpacing: 6, fontWeight: 700, fontFamily: "'Space Mono', monospace" }}>BACKTRACK</div>
           <ModeToggle mode={mode} onToggle={() => { setMode("throwback"); setPlayState("browsing"); }} />
+          <div onClick={() => { window.location.href = "/api/auth/signout"; }} style={{ color: "rgba(255,255,255,0.2)", fontSize: 9, letterSpacing: 2, fontFamily: "'Space Mono', monospace", cursor: "pointer", padding: "6px 12px", borderRadius: 20, border: "1px solid rgba(255,255,255,0.06)", transition: "all 0.2s ease" }} onMouseEnter={e => { e.currentTarget.style.color = "rgba(255,255,255,0.5)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)"; }} onMouseLeave={e => { e.currentTarget.style.color = "rgba(255,255,255,0.2)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.06)"; }}>SIGN OUT</div>
         </div>
         <ModernView
           albums={albums}
@@ -346,8 +347,11 @@ export default function Timeline() {
       <div style={{ position: "absolute", top: 20, left: 0, right: 0, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 28px", zIndex: 40 }}>
         <div style={{ color: "rgba(255,255,255,0.4)", fontSize: 13, letterSpacing: 6, fontWeight: 700, fontFamily: "'Space Mono', monospace" }}>BACKTRACK</div>
         <ModeToggle mode={mode} onToggle={() => setMode("modern")} />
-        <div onClick={() => setShowYearPicker(true)} style={{ display: "flex", alignItems: "center", gap: 6, color: "rgba(255,255,255,0.35)", fontSize: 10, letterSpacing: 2, fontFamily: "'Space Mono', monospace", cursor: "pointer", padding: "6px 14px", borderRadius: 20, border: "1px solid rgba(255,255,255,0.1)", background: "rgba(255,255,255,0.02)" }}>
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>SKIP TO YEAR
+        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+          <div onClick={() => setShowYearPicker(true)} style={{ display: "flex", alignItems: "center", gap: 6, color: "rgba(255,255,255,0.35)", fontSize: 10, letterSpacing: 2, fontFamily: "'Space Mono', monospace", cursor: "pointer", padding: "6px 14px", borderRadius: 20, border: "1px solid rgba(255,255,255,0.1)", background: "rgba(255,255,255,0.02)" }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>SKIP TO YEAR
+          </div>
+          <div onClick={() => { window.location.href = "/api/auth/signout"; }} style={{ color: "rgba(255,255,255,0.2)", fontSize: 9, letterSpacing: 2, fontFamily: "'Space Mono', monospace", cursor: "pointer", padding: "6px 12px", borderRadius: 20, border: "1px solid rgba(255,255,255,0.06)", transition: "all 0.2s ease" }} onMouseEnter={e => { e.currentTarget.style.color = "rgba(255,255,255,0.5)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)"; }} onMouseLeave={e => { e.currentTarget.style.color = "rgba(255,255,255,0.2)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.06)"; }}>SIGN OUT</div>
         </div>
       </div>
 
