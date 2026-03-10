@@ -344,10 +344,12 @@ export default function Timeline() {
       <div style={{ position: "absolute", top: "15%", left: "50%", transform: "translate(-50%, 0)", width: 600, height: 600, borderRadius: "50%", background: "radial-gradient(circle, rgba(120,100,80,0.06), transparent 65%)", pointerEvents: "none" }} />
 
       {/* Header */}
-      <div style={{ position: "absolute", top: 20, left: 0, right: 0, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 28px", zIndex: 40 }}>
-        <div style={{ color: "rgba(255,255,255,0.4)", fontSize: 13, letterSpacing: 6, fontWeight: 700, fontFamily: "'Space Mono', monospace" }}>BACKTRACK</div>
+      <div style={{ position: "absolute", top: 20, left: 0, right: 0, display: "flex", alignItems: "center", padding: "0 28px", zIndex: 40 }}>
+        <div style={{ flex: 1, display: "flex", alignItems: "center" }}>
+          <div style={{ color: "rgba(255,255,255,0.4)", fontSize: 13, letterSpacing: 6, fontWeight: 700, fontFamily: "'Space Mono', monospace" }}>BACKTRACK</div>
+        </div>
         <ModeToggle mode={mode} onToggle={() => setMode("modern")} />
-        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+        <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "flex-end", gap: 10 }}>
           <div onClick={() => setShowYearPicker(true)} style={{ display: "flex", alignItems: "center", gap: 6, color: "rgba(255,255,255,0.35)", fontSize: 10, letterSpacing: 2, fontFamily: "'Space Mono', monospace", cursor: "pointer", padding: "6px 14px", borderRadius: 20, border: "1px solid rgba(255,255,255,0.1)", background: "rgba(255,255,255,0.02)" }}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>SKIP TO YEAR
           </div>
